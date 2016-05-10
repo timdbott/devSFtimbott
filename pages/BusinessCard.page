@@ -1,0 +1,85 @@
+<apex:page docType="html-5.0" title="Business Card">
+    
+    <style>
+        .myPage {
+            font-family: "ProximaNovaSoft-Regular", Calibri; 
+            font-size: 110%;
+            padding-top: 12px;
+            width: 100%;
+        }
+        .myPage input[type=text] {
+            width: 100%;
+            height: 35px;
+            -webkit-appearance: none;
+            padding: 0 8px;
+            margin: 4px 0;
+            line-height: 21px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            outline: none;
+        }
+        .myPage button {
+            -webkit-appearance: button;
+            border-radius: 3px;
+            display: block;
+            padding: 12px;
+            margin: 4px 0;
+            width: 100%;
+            background: #eee;
+            border: solid 1px #ccc;
+        }
+    </style>    
+    
+    <apex:remoteObjects >
+    	<apex:remoteObjectModel name="User" fields="Id,Name,Email,Phone,Title"/>
+    </apex:remoteObjects>
+    
+    <div class="myPage">
+		<p id="firstName">{!$User.FirstName}</p>
+        <p id="lastName">{!$User.LastName}</p>
+        <p id="title">{!$User.Title}</p>
+        <p id="phone">{!$User.Phone}</p>
+        <p id="email">{!$User.Email}</p>
+    </div>
+    <apex:form >
+		<p>Send to email: <input type="text" id="emailAddress" /></p>
+    	<p><apex:commandButton value="Send Email" action="{!email}"/></p>
+    </apex:form>
+    
+    <script src='/canvas/sdk/js/publisher.js'></script>
+    
+    <script>
+        var ul = document.getElementById("busCard");
+        var user = new SObjectModel.User();
+        user.retrieve(function(error, records) {
+                if (error) {
+                    alert(error.message);
+                } else {
+                    var html = "";
+                    records.forEach(function(record) {
+                        html = html + "<li>" + record.get("Name") + "</li>";
+                        html = html + "<li>" + record.get("Title") + "</li>";
+                        html = html + "<li>" + record.get("Email") + "</li>";
+                        html = html + "<li>" + record.get("Phone") + "</li>";
+                    });
+                    ul.innerHTML = html;
+                }
+            }
+        );
+    
+	//email function
+	function email() {
+        
+        var em = new EmailManager();
+        var emailAddress = document.getElementById("emailAddress").value;
+        var body = document.getElementById("busCard").innerHTML;
+        var name = document.getElementById("firstName").value;
+        var subject = "Contact details for" + name;
+        
+        em.sendMail(emailAddress,subject,body);
+    }
+        
+    </script>
+    
+</apex:page>

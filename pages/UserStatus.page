@@ -1,0 +1,66 @@
+<apex:page sidebar="false">
+    
+    <apex:pageBlock title="User Status">
+    	<apex:pageBlockSection columns="1">
+        	{! $User.FirstName & ' ' & $User.LastName }
+            {! $User.UserName}
+            
+            <p>
+                today's date is {! today() }
+            </p>
+            <p>
+                next week it will be {! today() + 7 }
+            </p>
+            
+            <p>
+                the year today is {! year(today()) }
+            </p>
+            
+            <p>
+                tomorrow will be day number {! day(today() + 1 ) }
+            </p>
+            
+            <p>
+                let's find a maximum: {! max(1,2,3,4,5,6,5,4,3,2,1) }
+            </p>
+            
+            <p>
+                the square root of 49 is {! sqrt(49) }
+            </p>
+            
+            <p>
+                is it true? {! contains('salesforce.com','force.com') }
+            </p>
+            
+            <p>
+                {! if(contains('salesforce','force'),'yes','no') }
+            </p>
+            
+            <p>
+                {! if(day(today()) < 15, 'before the 15th', 'the 15th or after') }
+            </p>
+            
+            <p>
+                {! if($user.isActive, $user.username, 'inactive') }
+            </p>
+            
+            <p>   
+                <apex:outputLink value="{!URLFOR($Action.Account.New)}">
+                    Create New Account
+                </apex:outputLink>
+			</p>         
+            
+            <p>   
+                <apex:outputLink value="{!URLFOR($Action.Opportunity.New)}">
+                    Create New Opportunity
+                </apex:outputLink>
+                <apex:outputLink value="{!URLFOR($Action.Lead.New)}">
+                    Create New Lead
+                </apex:outputLink>                
+			</p>  
+            
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:page>

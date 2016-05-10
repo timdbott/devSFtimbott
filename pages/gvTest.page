@@ -1,0 +1,44 @@
+<apex:page standardController="Account">
+<head>
+	
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+	<script src="//www.google.com/jsapi"></script>
+    
+    <script type="text/javascript">
+    
+    //use this function to format the hover text
+    formatCurrencyLabel = function (value) {
+    	return "$" + String(value);
+    }
+
+    function drawChart() {
+        // we need a table to act as the datasource for the chart
+        var data = new google.visualization.DataTable();
+        
+        // the table needs two columns
+        data.addColumn("string", "Period");
+        data.addColumn("number", "Annual Revenue");
+        
+        // add the rows of data which consist of a value and a formatted label
+        data.addRow(["Total Pending $", {
+            v: {!Account.AnnualRevenue}, 
+            f: formatCurrencyLabel({!Account.AnnualRevenue})
+        }]);
+    
+        
+        //assign the chart to the appropriate div and draw the chart
+        var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"));
+        chart.draw(data, {width: 600, height: 500, title:"Annual Revenue Trend", legend:"none", vAxis: {minValue:0}, hAxis: {slantedTextAngle:45}});
+    }
+    
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    
+    </script>
+</head>
+
+<body>
+	<div id="chart_div" />
+</body>
+</apex:page>

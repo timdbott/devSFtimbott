@@ -1,0 +1,64 @@
+<apex:page controller="Act_RecentlyViewed" showHeader="true" sidebar="false">
+    <style type="text/css">
+
+    	[class*=Act_RecentlyViewed] 
+        
+        a { 	
+        	color: #f60; 
+            font-weight: normal; 
+            font-family: arial, helvetica, sans-serif; 
+            font-size: 12pt; 
+            text-decoration: none; 
+            padding: 5px 5px 5px 4px;
+            }
+        td {padding: 5px 5px 5px 4px;}
+        th {	
+        	color: #000; 
+            font-weight: bold;
+            font-family: arial, helvetica, sans-serif; 
+            font-size: 12pt; 
+            text-decoration: none; 
+            padding: 10px 5px 5px 1px;
+        	text-align: center;
+            }
+
+		[class*=imbedded] 
+        
+        {
+            border: 2px solid #a1a1a1;
+        	margin-right: 10px;
+            padding: 10px; 
+            background: #fff;
+            width: 300px;
+            border-radius: 10px;
+        	float: left;
+        }         
+    </style>
+    <div class="imbedded">
+
+            <apex:dataTable value="{! RecentlyViewed }" var="act" styleClass="Act_RecentlyViewed">
+                <apex:facet name="header">Recently Viewed Accounts</apex:facet>
+                <apex:column >
+                	<apex:outputText ><a href="https://na17.salesforce.com/{! act.Id }">{! act.Name }</a></apex:outputText>
+                </apex:column>
+            </apex:dataTable>
+	</div>
+    <div class="imbedded">
+
+            <apex:dataTable value="{! RecentlyViewed }" var="act" styleClass="Act_RecentlyViewed">
+                <apex:facet name="header">Recently Viewed Accounts</apex:facet>
+                <apex:column >
+                	<apex:outputText ><a href="https://na17.salesforce.com/{! act.Id }">{! act.Name }</a></apex:outputText>
+                </apex:column>
+            </apex:dataTable>
+	</div>
+    <div class="imbedded">
+
+            <apex:dataTable value="{! RecentlyViewed }" var="act" styleClass="Act_RecentlyViewed">
+                <apex:facet name="header">Recently Viewed Accounts</apex:facet>
+                <apex:column >
+                	<apex:outputText ><a href="https://na17.salesforce.com/{! act.Id }">{! act.Name }</a></apex:outputText>
+                </apex:column>
+            </apex:dataTable>
+	</div>
+</apex:page>

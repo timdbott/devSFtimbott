@@ -1,0 +1,35 @@
+<apex:page standardController="Account" recordSetvar="accounts" showHeader="true" sidebar="true">
+    
+	<apex:enhancedList type="Account" height="500"/>
+    
+    <apex:pageBlock title="Account List">
+        <apex:form id="actListFrm">
+            <apex:panelGrid columns="2">
+                <apex:outputLabel value="View:"/>
+                <apex:selectList value="{!filterId}" size="1">  <!--00Bo0000001Wvrg-->
+                    <apex:actionSupport event="onchange" rerender="actList"/>
+                    <apex:selectOptions value="{!listviewoptions}"/>
+                </apex:selectList>
+            </apex:panelGrid>
+            <apex:pageBlockSection >
+                <apex:pageBlockTable var="a" value="{!accounts}" id="actList">
+                    <apex:column value="{!a.name}"/>
+                    <apex:column value="{!a.owner.name}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:form> 
+    </apex:pageBlock>
+    
+    <apex:panelGrid columns="2" width="90%">
+    	<apex:pageBlock title="Reports">
+        	<a href="www.google.com">Google</a>
+        </apex:pageBlock>
+    	<apex:pageBlock title="Account FAQ">
+        	<a href="www.google.com">Google</a>
+        </apex:pageBlock>
+    
+    </apex:panelGrid>
+        
+
+ 
+</apex:page>

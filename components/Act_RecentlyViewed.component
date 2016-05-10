@@ -1,0 +1,25 @@
+<apex:component controller="Act_RecentlyViewed">
+    <style>
+		[id*=imbedded] 
+        
+        div {
+            border: 2px solid #a1a1a1;
+            padding: 10px 40px; 
+            background: #fff;
+            width: 300px;
+            border-radius: 5px;
+        }
+    </style>
+<div id="imbedded">
+    <apex:form >
+            <apex:pageBlock title="Recently Viewed Accounts" id="actList" html-width="25%">
+                    <apex:pageBlockSection >  <!-- this enforces the pageBlock width -->
+                    <apex:pageBlockTable value="{! RecentlyViewed }" var="act" columns="1">
+                        <apex:column ><a href="https://na17.salesforce.com/{! act.Id }">{! act.Name }</a></apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+</div>
+
+</apex:component>

@@ -1,0 +1,38 @@
+<apex:page sidebar="false" showHeader="true" standardStylesheets="true">
+    <iframe src="https://ciweb.steelcase.com/Search.aspx" width="900px" height="600px">
+    </iframe>
+    
+    <p></p>
+        <h1>
+            Hello World
+        </h1>
+    
+	<apex:pageBlock title="a block title">
+        
+        I'm two components deep!
+        
+        <apex:pageBlockSection title="a section title">
+            
+    		I'm three components deep!
+            
+		</apex:pageBlockSection>
+    </apex:pageBlock>    
+
+	<apex:pageBlock title="a new block title">
+        
+        I'm two components deep!
+        
+        <apex:pageBlockSection title="a section title">
+            
+    		I'm three components deep!
+            
+		</apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="a section title">
+            
+    		I'm three components deep!
+            
+		</apex:pageBlockSection>         
+    </apex:pageBlock>    
+    
+</apex:page>

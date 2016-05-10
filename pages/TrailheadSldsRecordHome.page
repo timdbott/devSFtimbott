@@ -1,0 +1,276 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0"> 
+    
+    <!--   enable support for the SVG icon sprite maps within Visualforce  -->
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <head>
+        <title>Salesforce Lightning Design System Trailhead Module</title>
+    	<apex:stylesheet value="{!URLFOR($Resource.SLDS0110, 'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+    </head>
+    <body>
+        <!-- required slds wrapper -->
+        <div class="slds">
+            <!-- masthead -->
+            <p class="slds-text-heading--label slds-m-bottom--small">
+                Salesforce Lighting Design System Trailhead Module
+            </p>
+            <!-- / masthead -->
+            
+			<!-- page header  -->
+            <div class="slds-page-header" role="banner">
+                <!-- page header - top row -->
+                <div class="slds-grid">
+                    <div class="slds-col">
+                        <!-- header -->
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <svg aria-hidden="true" class="slds-icon slds-icon--large slds-icon-standard-user">
+                                	<use xlink:href="{!URLFOR($Resource.SLDS080, 'assets/icons/standard-sprite/svg/symbols.svg#user')}">
+                                    </use>
+                                </svg>
+                            </div>
+                            <div class="slds-media__body">
+                                <p class="slds-text-heading--label">
+                                    Account
+                                </p>
+                                <h1 class="slds-text-heading--medium">slds inc.
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- header row 1 - col 1 -->
+                    <div class="slds-col slds-no-flex slds-align-middle">
+                        <div class="slds-button-group" role="group">
+                            <button class="slds-button slds-button--neutral">
+                                Contact
+                            </button>
+                            <button class="slds-button slds-button--neutral">
+								More
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>  <!-- / header - top row -->
+                
+                <!-- page header - detail row -->
+                <div class="slds-grid slds-page-header__detail-row">
+                    <!-- header row 2 - col 1 -->
+                    <div class="slds-col--padded slds-size--1-of-4">
+                        <dl>
+                            <dt>
+                            	<p class="slds-text-heading--label sld-struncate">
+                                    Field 1
+                                </p>
+                            </dt>
+                            <dd>
+                            	<p class="slds-text-body--regular slds-truncate">
+                                    Description that demonstrates truncation with a long text field
+                                </p>
+                            </dd>                            
+                        </dl>
+                    </div>
+                    <!-- header row 2 - col 2 -->
+                    <div class="slds-col--padded slds-size--2-of-4">
+                        <dl>
+                            <dt>
+                            	<p class="slds-text-heading--label sld-struncate">
+                                    Field 2
+                                </p>
+                            </dt>
+                            <dd>
+                            	<a href="#">hyperlink 2</a>
+                            </dd>                            
+                        </dl>
+                    </div>
+                    <!-- header row 2 - col 3 -->
+                    <div class="slds-col--padded slds-size--3-of-4">
+                        <dl>
+                            <dt>
+                            	<p class="slds-text-heading--label sld-struncate">
+                                    Field 3
+                                </p>
+                            </dt>
+                            <dd>
+                            	<a href="#">hyperlink 3</a>
+                            </dd>                            
+                        </dl>
+                    </div>
+                    <!-- header row 2 - col 4 -->
+                    <div class="slds-col--padded slds-size--4-of-4">
+                        <dl>
+                            <dt>
+                            	<p class="slds-text-heading--label sld-struncate">
+                                    Field 4
+                                </p>
+                            </dt>
+                            <dd>
+                            	<a href="#">hyperlink 4</a>
+                            </dd>                            
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- content -->
+            <div class="myapp">
+                <!-- related list cards -->
+                <div class="slds-grid slds-m-top--large">
+                    <!-- main card -->
+                    <div class="slds-col slds-col-rule--right slds-p-right--large slds-size--8-of-12">
+                        <div class="slds-card">
+                            <header class="slds-card__header slds-grid">
+                                <div class="slds-col slds-media slds-media--center">
+                                    <div class="slds-media__figure">
+                                        <svg aria-hidden="true" class="slds-icon slds-icon-standard-contact slds-icon--small">
+                                            <use xlink:href="{!URLFOR($Resource.SLDS080, 'assets/icons/standard-sprite/svg/symbols.svg#contact')}"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <h3 class="slds-text-heading--small">
+                                            Contacts
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-no-flex">
+                                    <button class="slds-button slds-button--neutral slds-button--small">
+                                        add
+                                    </button>
+                                </div>
+                            </header>
+                            <!-- card body -->
+                            <section class="slds-card__body">
+                                <div class="slds-scrollable--x">
+                                    <table class="slds-table slds-table--bordered slds-max-medium-table--stacked-horizontal">
+                                        <thead>
+                                        	<tr class="slds-no-hover">
+                                                <th class="slds-text-heading--label slds-size--1-of-4" scope="col">Name</th>
+                                                <th class="slds-text-heading--label slds-size--1-of-4" scope="col">Company</th>
+                                                <th class="slds-text-heading--label slds-size--1-of-4" scope="col">Title</th>
+                                                <th class="slds-text-heading--label slds-size--1-of-4" scope="col">Email</th>
+                                                <th class="slds-row-action" scope="col">
+                                                	<button class="slds-button slds-button--icon-border-filled slds-button--icon-border-small">
+                                                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint slds-button__icon--small">
+                                                        	<use xlink:href="{!URLFOR($Resource.SLDS080, 'assets/icons/utility-sprite/svg/symbols.svg#down')}"></use>
+                                                        </svg>
+                                                        <span class="slds-assistive-text">show more</span>
+                                                    </button>
+                                                </th>
+											</tr>
+                                        </thead>
+                                        <tbody>
+                                        	<tr class="slds-hint-parent">
+                                            	<td class="slds-size--1-of-4" data-label="Name">Adam Choi</td>
+                                                <td class="slds-size--1-of-4" data-label="Company">Company one</td>
+                                                <td class="slds-size--1-of-4" data-label="Title">Director of Operations</td>
+                                                <td class="slds-size--1-of-4" data-label="Email">adam@company.com</td>
+                                                <td>
+                                                	<button class="slds-button slds-button--icon-border-filled slds-button--icon-border-small">
+                                                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint slds-button__icon--small">
+                                                        	<use xlink:href="{!URLFOR($Resource.SLDS080, 'assets/icons/utility-sprite/svg/symbols.svg#down')}"></use>
+                                                        </svg>
+                                                        <span class="slds-assistive-text">show more</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+                            <!-- / card body -->
+                            <footer class="slds-card__footer">
+                            	<a href="#">view all</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <!-- compact card -->
+                    <div class="slds-col slds-p-left--large slds-size--4-of-12">
+                        <div class="slds-card">
+                            <header class="slds-card__header">
+                                <div class="slds-col slds-media slds-media--center">
+                                    <div class="slds-media__figure">
+                                        <svg aria-hidden="true" class="slds-icon slds-icon-standard-lead slds-icon--small">
+                                            <use xlink:href="{!URLFOR($Resource.SLDS080, 'assets/icons/standard-sprite/svg/symbols.svg#lead')}"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <h3 class="slds-text-heading--small">
+                                            Team
+                                        </h3>
+                                    </div>
+                                </div>
+                            </header>
+                            
+                            <section class="slds-card__body">
+                            	<!-- list with 2 items -->
+                                <ul>
+                                    <li class="slds-tile slds-hint-parent">
+                                    	<p class="tile__title slds-truncate">
+                                            <a href="#">Anne Choi</a>
+                                        </p>
+                                        <div class="tile__detail">
+                                            <dl class="dl--horizontal slds-text-body--small">
+                                                <dt class="slds-dl--horizontal__label">
+                                                	<p class="slds-truncate">
+                                                        Email:
+                                                    </p>
+                                                </dt>
+                                                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                                                	<p class="slds-truncate">
+                                                        achoi@company.com
+                                                    </p>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </li>
+                                    <li class="slds-tile slds-hint-parent">
+                                    	<p class="tile__title slds-truncate">
+                                            <a href="#">J Z</a>
+                                        </p>
+                                        <div class="tile__detail">
+                                            <dl class="dl--horizontal slds-text-body--small">
+                                                <dt class="slds-dl--horizontal__label">
+                                                	<p class="slds-truncate">
+                                                        Email:
+                                                    </p>
+                                                </dt>
+                                                <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                                                	<p class="slds-truncate">
+                                                        ja@company.com
+                                                    </p>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                            
+                            <footer class="slds-card__footer">
+                            	<a href="#">view all</a>
+                            </footer>
+						</div>
+                    </div>
+                </div>
+            </div>
+        	
+            <!-- footer -->
+            <footer role="contentinfo" class="slds-p-around--large">
+            
+                <!-- grid -->
+                <div class="slds-grid slds-grid--align-spread">
+                    <p class="slds-col">
+                        Salesforce Lighting Design System Example
+                    </p>
+                    <p class="slds-col">
+                        &copy; tim bott
+                    </p>
+                </div>
+            </footer>
+        </div>  <!-- end my app -->
+	</body>
+	
+	<!-- javascript -->
+	<script>
+        
+    </script>
+    </html>
+</apex:page>
