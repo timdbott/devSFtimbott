@@ -1,0 +1,6 @@
+<apex:page standardController="contact">
+
+Map to <b>{!contact.Name}</b>.
+
+
+</apex:page>

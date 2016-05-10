@@ -1,0 +1,8 @@
+<apex:page showHeader="false" sidebar="false">
+<div id="main">
+    <apex:include id="Act_RecentlyViewed" pageName="Act_RecentlyViewed"/>
+</div>
+<div id="main1">
+    <c:Act_RecentlyViewed />    
+</div>
+</apex:page>

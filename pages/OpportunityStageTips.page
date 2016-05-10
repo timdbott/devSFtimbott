@@ -1,0 +1,59 @@
+<apex:page docType="html-5.0" standardController="Opportunity">
+    <style>
+        .main .header {
+            margin: 12px 0;
+            font-size: 64px;
+            text-align: center;
+        }
+        .main .subheader {
+            font-size: 24px;
+            text-align: center;
+            color: green;
+        }
+    </style>
+    
+    <div class="main">
+        <div class="header" id="header">
+            <apex:outputText value="{!IF(Opportunity.StageName == 'Prospecting','prospect',
+                                    IF(Opportunity.StageName == 'Needs Analysis','analysis',
+                                    IF(Opportunity.StageName == 'Proposal/Price Quote','price',
+                                    IF(Opportunity.StageName == 'Negotiation/Review','$$$',null))))}"></apex:outputText>
+        </div>
+        <div class="subheader" id="subheader">
+            
+        </div>
+    </div>
+    
+    <script>
+    //not the solution they were looking for here.
+    	var stage = "{!Opportunity.StageName}",
+            headerElm = document.getElementById("header"),
+            subheaderElm = document.getElementById("subheader"),
+            header, subheader;
+    	
+    	switch (stage) {
+                
+			case 'Prospecting':
+                header = 'Prospect';
+                subheader = 'dig dig!';
+            	break;
+            case 'Needs Analysis':
+                header = 'Analysis';
+                subheader = 'anal i sis!';
+            	break;
+            case 'Proposal/Price Quote':
+                header = 'Price';
+                subheader = '$$$$!';                
+            	break;                
+            case 'Negotiation/Review':
+                header = 'Negotiate';
+                subheader = 'win-win!';
+            	break;
+            default:
+                header = stage;
+                subheader = '';
+        }
+    //	headerElm.innerHTML = header;
+    //	subheaderElm.innerHTML = subheader;
+    </script>
+</apex:page>

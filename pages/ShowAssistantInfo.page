@@ -1,0 +1,49 @@
+<apex:page docType="html-5.0" standardController="Contact" title="Assistant Info">
+    
+    <style>
+        .content {
+            font-family: "ProximaNovaSoft-Regular", Calibri; 
+            font-size: 110%;
+            padding-top: 12px;
+        	font-size: 14pt;
+        }
+        .content button {
+            -webkit-appearance: button;
+            border-radius: 3px;
+            display: block;
+            padding: 12px;
+            margin: 8px 0;
+            width: 100%;
+            background: #eee;
+            border: solid 1px #ccc;
+          }
+    </style>
+    
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="Contact" fields="Id,AssistantName,AssistantPhone"/>
+    </apex:remoteObjects>
+    
+    <div class="content">
+        <apex:outputText >{!Contact.AssistantName}</apex:outputText><br/>
+        <!--<a href="tel:{!Contact.AssistantPhone}">{!Contact.AssistantPhone}</a> -->
+        <apex:outputText ><a id="assistantPhone" href="">{!Contact.AssistantPhone}</a></apex:outputText>
+    </div>
+    
+    <script>
+    	var phoneFieldId = "assistantPhone",
+            phone = "{!Contact.AssistantPhone}",
+        	phoneField;
+    	
+    	phone = phone.replace(/[^0-9]+/g, '');
+    	//phone = phone.slice(1,4) + phone.slice(6,9) + phone.slice(10,14);
+    	//console.log(phone.slice(1,4)+phone.slice(6,9)+phone.slice(10,14));
+    	try {
+            phoneField = document.getElementById(phoneFieldId);
+            phoneField.href = "tel:" + phone;
+            
+        } catch(e) {
+            console.log(e);
+        }
+            
+    </script>
+</apex:page>

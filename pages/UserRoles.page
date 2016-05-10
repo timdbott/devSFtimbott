@@ -1,0 +1,15 @@
+<apex:page standardController="User" recordSetVar="users">
+    <apex:form >
+        <apex:pageBlock title="User Roles" id="user_roles">
+    
+
+			<!-- users list -->
+            <apex:pageBlockTable value="{!users}" var="ct">
+                <apex:column value="{!ct.firstname}"/>
+                <apex:column value="{!ct.lastname}"/>
+                <apex:column value="{!ct.email}"/>
+                <apex:column value="{!ct.userrole}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

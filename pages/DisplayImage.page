@@ -1,0 +1,15 @@
+<apex:page sidebar="false" standardController="Account">
+    <apex:image url="https://developer.salesforce.com/files/salesforce-developer-network-logo.png" id="imgTrailhead"/>
+    <apex:pageBlock title="Account Summary">
+        <apex:pageBlockSection >
+        	
+            name: {! Account.Name } <br/>
+            name2: <apex:image url="{! Account.Name }"/>
+            potential value: {! Account.bottna17__Potential_Value__c } <br/>
+            employees: {! Account.NumberOfEmployees  } <br/> <br/>
+            result: {! ROUND( (Account.NumberOfEmployees / Account.bottna17__Potential_Value__c) * 100, 2) } %<br/>
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+</apex:page>

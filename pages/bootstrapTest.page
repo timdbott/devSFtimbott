@@ -1,0 +1,52 @@
+<apex:page sidebar="true" showHeader="false" docType="html-5.0" standardStylesheets="false" standardController="Contact" recordSetVar="contacts">
+    
+<html lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>bootstrap test</title>
+    
+    <!-- Bootstrap core CSS -->
+    <apex:stylesheet value="{!URLFOR($Resource.bootstrap, 'bootstrap-3.3.2-dist/css/bootstrap.css')}" />
+    
+  </head>
+
+  <body data-feedly-mini="yes">
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+          <apex:repeat value="{!contacts}" var="ct">
+              <div class="col-sm-2" style="margin: 1px;">
+                  <div class="panel panel-success">
+                      <div class="panel-heading">
+                          <h3 class="panel-title" style="color: rgb(70, 136, 71)">
+                              <apex:outputField value="{!ct.lastname}"/>
+                          </h3>
+                      </div>
+                      <div class="panel-body">
+                          <p><apex:outputField value="{!ct.firstname}"/></p>
+                          <p><apex:outputField value="{!ct.phone}"/></p>
+                      </div>
+                  </div>
+              </div>
+          </apex:repeat>              
+          
+        
+
+          <hr/>
+      </div>
+
+    </div> <!-- /container -->
+</body>
+
+
+</html> 
+        
+
+
+           
+</apex:page>

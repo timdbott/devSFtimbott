@@ -1,0 +1,36 @@
+<apex:page controller="ContactsListController">
+    <style>
+    .pbTitle h2 {
+        color: #ccc;
+        font-size: 1.5em;
+	}
+    
+    </style>
+    <apex:form >
+        <apex:pageBlock title="Contacts List" id="contacts_list">
+            
+            <!-- Contacts List goes here -->
+            <apex:pageBlock >
+            	<apex:pageBlockTable value="{!contacts}" var="ct">
+                	<apex:column value="{!ct.firstname}">
+                    	<apex:facet name="header">
+                    		<apex:commandLink action="{!sortByFirstName}" reRender="contacts_list">
+                            	<apex:outputText value="{! $ObjectType.Contact.Fields.FirstName.Label }"/>
+                            </apex:commandLink>
+                    	</apex:facet>
+                    </apex:column>
+                    <apex:column value="{!ct.lastname}">
+                    	<apex:facet name="header">
+                    		<apex:commandLink action="{!sortByLastName}" reRender="contacts_list">
+                            	<apex:outputText value="{! $ObjectType.Contact.Fields.LastName.Label }"/>
+                            </apex:commandLink>
+                    	</apex:facet>
+                    </apex:column>
+                    <apex:column value="{!ct.title}"/>
+                    <apex:column value="{!ct.email}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
